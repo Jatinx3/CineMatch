@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { Providers } from "@/components/Providers";
+import { CookieBanner } from "@/components/layout/CookieBanner";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -33,6 +34,7 @@ export default function RootLayout({
         <Providers>
           <div className="flex flex-col min-h-screen">
             <div className="flex-1">{children}</div>
+            <CookieBanner />
             <footer className="w-full border-t border-white/5 bg-[#080808] py-6 px-6">
               <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-3">
                 <div className="flex items-center gap-2">
