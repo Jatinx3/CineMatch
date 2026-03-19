@@ -1,11 +1,3 @@
----
-title: CineMatch API
-emoji: 🎬
-colorFrom: blue
-colorTo: indigo
-sdk: docker
----
-
 <div align="center">
   <img src="./public/readme_banner.png" alt="CineMatch Banner" width="100%" style="border-radius: 12px; margin-bottom: 20px;">
   
