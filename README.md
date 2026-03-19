@@ -150,8 +150,22 @@ final_score = 0.7 × sim_score + 0.3 × (sim_score × log_pop_norm)
 This keeps niche gems discoverable while surfacing well-validated blockbusters.
 
 ---
-
-## Project Structure
+ 
+ ## Deployment
+ 
+ CineMatch is deployed as a fully decoupled live environment:
+ 
+ | Component | Platform | URL |
+ |---|---|---|
+ | **Frontend** | Vercel | [cinematch.ijatin.dev](https://cinematch.ijatin.dev/) |
+ | **Backend API** | Hugging Face Spaces | [jatinx3-cinematch-api.hf.space](https://jatinx3-cinematch-api.hf.space/docs) |
+ 
+ ### Backend Hosting Logic
+ The FastAPI layer leverages **Hugging Face Spaces (Docker SDK)** using Git LFS due to its generous memory constraints for pre-loading dense 384d dataset vector buffers correctly on startup.
+ 
+ ---
+ 
+ ## Project Structure
 
 ```
 cinematch/
