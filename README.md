@@ -20,6 +20,25 @@ The documentation page exposes live ML system stats (embedding dimensions, vocab
 
 ---
 
+## 📊 Dataset Overview
+
+The system processes static frames blended from **MovieLens 32M** and enriched with context using **TMDB API parameters**.
+
+| Feature | Description | Example / Note |
+| :--- | :--- | :--- |
+| **Movie Node Count** | 87,000+ distinct movies | Filtered for quality coverage |
+| **User Rating Counts** | Log-normalised popularity weights | Used to maintain discovery indices |
+| **Categorisation tags** | Flat Array genres | Action, Sci-Fi, Adventure |
+| **Keywords map** | Plot point tags | `time travel`, `space war`, `dystopian` |
+| **Overview string** | Natural language summaries | Direct plot synopsis metadata |
+
+### Enriched Feature Vectors
+To perform search matches, the indices are compiled into a continuous context payload, or `final_features`:
+`[Genres] + [Keywords Header] + [Plot Synopsis String Text]`
+This ensures keywords regarding tone or theme take positional precedence in vector space weight aggregations.
+
+---
+
 ## Features
 
 - 🔍 **Full-text search** across 87,000+ movies with ranked result specificity
@@ -118,26 +137,28 @@ Interactive docs available at [http://localhost:8000/docs](http://localhost:8000
 
 ---
 
-## ML Architecture
+## 🧠 ML Pipelines & Architecture
 
-### TF-IDF
-- `TfidfVectorizer` with `max_features=15000`, `ngram_range=(1,2)`, `min_df=2`
-- Built on `final_features`: front-loaded genres/keywords + plot overview
-- L2-normalised sparse matrix — dot product = cosine similarity
+### 1. TF-IDF Indexer (Lexical Similarity)
+This approach finds movies that **sound** together based on term frequency.
 
-### BERT
-- `all-MiniLM-L6-v2` via `sentence-transformers` (384 dimensions)
-- Encodes `final_features` in batches with `max_seq_length=512`
-- L2-normalised dense matrix — stored in `data/bert_embeddings_full.npy`
+*   **Mechanism**: Converts descriptive payloads into structured numerical weights representing the rarity of words across the array.
+*   **Parameters**: Fits a `TfidfVectorizer` with a **15,000 max factor**, supporting `ngram_range=(1,2)` (unigrams and bigrams), ignoring common stop words.
+*   **Best For**: Exact matches, franchise sequels, and literal term matching (e.g., "Star Wars").
 
-### Popularity Rebalancing
-Both models apply a weighted blend of semantic score and log-normalised popularity:
+### 2. BERT Embeddings (Semantic Similarity)
+This approach finds movies that **feel** together based on deep contextual meanings.
+
+*   **Mechanism**: Leverages `sentence-transformers/all-MiniLM-L6-v2` to output dense index vectors maps.
+*   **Context Capacity**: Re-aligned models with a **512-token context window window width** ensuring entire synopses fit into dense vectors without truncation penalties.
+*   **Best For**: Mood matching, descriptive requests (e.g., "dark superhero tragedy"), and discovering non-literal thematic updates.
+
+### ⚖️ Popularity Weighted Allocation
+Both pipelines optimize output nodes by running a weighted dot-product scoring blending traditional weights with log-normalised counts to ensure mainstream popular items get correctly prioritized without fully drowning out hidden gems.
 
 ```
 final_score = 0.7 × sim_score + 0.3 × (sim_score × log_pop_norm)
 ```
-
-This keeps niche gems discoverable while surfacing well-validated blockbusters.
 
 ---
  
