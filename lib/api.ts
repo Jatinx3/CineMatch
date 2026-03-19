@@ -1,6 +1,7 @@
 import { Movie, SystemStats } from "./types";
 
-const API_BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL || process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000";
+const _raw_url = process.env.NEXT_PUBLIC_API_BASE_URL || process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000";
+const API_BASE_URL = _raw_url.replace(/\/$/, "");
 
 function mapMovieResponse(data: any): Movie {
   const posterPath = data.poster_path;
