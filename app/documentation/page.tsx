@@ -59,12 +59,22 @@ export default function DocumentationPage() {
                 CineMatch
               </span>
             </Link>
-            <Link
-              href="/"
-              className="text-xs font-bold text-[#f43f5e] hover:text-[#fb7185] transition-colors uppercase tracking-widest inline-flex items-center gap-2"
-            >
-              <span className="text-lg">←</span> BACK TO APP
-            </Link>
+            <div className="flex items-center gap-4">
+              <Link
+                href="https://github.com/Jatinx3/CineMatch"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-xs font-bold text-[#a1a1aa] hover:text-white transition-colors uppercase tracking-widest inline-flex items-center gap-2 bg-white/5 hover:bg-white/10 px-3 py-1.5 rounded-lg border border-white/5"
+              >
+                💻 GitHub
+              </Link>
+              <Link
+                href="/"
+                className="text-xs font-bold text-[#f43f5e] hover:text-[#fb7185] transition-colors uppercase tracking-widest inline-flex items-center gap-2"
+              >
+                <span className="text-lg">←</span> BACK TO APP
+              </Link>
+            </div>
           </div>
           <div className="space-y-4">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-black text-white tracking-tighter">
