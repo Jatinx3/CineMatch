@@ -91,6 +91,7 @@ class RecommenderSystem:
             print(f"❌ Failed to initialise recommender: {e}")
             import traceback
             traceback.print_exc()
+            self.load_error = str(e)
             self.movies_df = pd.DataFrame()
             self.is_loaded = False
 

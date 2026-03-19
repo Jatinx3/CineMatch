@@ -30,10 +30,17 @@ app.add_middleware(
 )
 
 
-@app.get("/stats", response_model=SystemStats, tags=["System"])
+@app.get("/stats", response_model=SystemStats)
 def get_stats():
-    """Return live system statistics: movie count, embedding dimensions, genre distribution."""
-    return recommender.get_system_stats()
+    """Returns database and vector space dimensionality metrics."""
+    return recommender.get_stats()
+
+@app.get("/debug_error")
+def debug_error():
+    """Returns the initialization error if any for debugging."""
+    if hasattr(recommender, "load_error"):
+        return {"error": recommender.load_error}
+    return {"error": "No error recorded"}
 
 
 @app.get("/search", response_model=List[MovieResponse], tags=["Movies"])
