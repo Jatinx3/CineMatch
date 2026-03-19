@@ -33,7 +33,7 @@ app.add_middleware(
 @app.get("/stats", response_model=SystemStats)
 def get_stats():
     """Returns database and vector space dimensionality metrics."""
-    return recommender.get_stats()
+    return recommender.get_system_stats()
 
 @app.get("/debug_error")
 def debug_error():
