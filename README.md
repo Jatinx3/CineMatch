@@ -1,4 +1,14 @@
+---
+title: CineMatch API
+emoji: 🎬
+colorFrom: blue
+colorTo: indigo
+sdk: docker
+app_dir: backend
+---
+
 <div align="center">
+
 
 # 🎬 CineMatch
 
