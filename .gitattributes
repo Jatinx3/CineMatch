@@ -1,0 +1,2 @@
+backend/data/*.npy filter=lfs diff=lfs merge=lfs -text
+backend/data/*.pkl filter=lfs diff=lfs merge=lfs -text
