@@ -169,6 +169,8 @@ cinematch/
 │   └── scripts/                # Data generation scripts (offline use only)
 │       ├── rebuild_dataset.py
 │       └── generate_embeddings.py
+├── notebook/                   # Model training and exploration
+│   └── cinematchv1.ipynb       # Final notebook (BERT 512-token context)
 └── .gitignore                  # Covers Node, Python, ML artifacts, env files
 ```
 
@@ -176,10 +178,11 @@ cinematch/
 
 ## Notebooks
 
+The heavy-lifting and token analysis is documented in our core notebook:
+
 | File | Purpose |
 |---|---|
-| `AIRecom.ipynb` | Initial exploration and baseline model |
-| `jrecommwdata (1).ipynb` | Final model — BERT with 512-token context window achieving 0.290 precision |
+| `notebook/cinematchv1.ipynb` | **Final model** — BERT with 512-token context window achieving 0.290 precision |
 
 ---
 
