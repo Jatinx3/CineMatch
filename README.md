@@ -1,7 +1,8 @@
 <div align="center">
-  <img src="./public/readme_banner.png" alt="CineMatch Banner" width="100%" style="border-radius: 12px; margin-bottom: 20px;">
-  
-  **AI-powered movie discovery using TF-IDF and BERT neural embeddings**
+
+# 🎬 CineMatch
+
+**AI-powered movie discovery using TF-IDF and BERT neural embeddings**
 
 [![Next.js](https://img.shields.io/badge/Next.js-15-black?logo=nextdotjs)](https://nextjs.org/)
 [![FastAPI](https://img.shields.io/badge/FastAPI-0.115-009688?logo=fastapi)](https://fastapi.tiangolo.com/)
