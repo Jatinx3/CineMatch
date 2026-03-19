@@ -1,12 +1,3 @@
----
-title: CineMatch API
-emoji: 🎬
-colorFrom: blue
-colorTo: indigo
-sdk: docker
-pinned: false
----
-
 # CineMatch API 🎬
 
 FastAPI backend for the CineMatch AI Movie Recommendation engine, leveraging TF-IDF and BERT neural embeddings for hybrid lexical/semantic search pipelines.
