@@ -49,7 +49,7 @@ export default function DocumentationPage() {
         
         {/* ── Header ── */}
         <header className="space-y-6">
-          <div className="flex items-center justify-between">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
             <Link
               href="/"
               className="flex items-center gap-2 group"
@@ -59,7 +59,7 @@ export default function DocumentationPage() {
                 CineMatch
               </span>
             </Link>
-            <div className="flex items-center gap-4">
+            <div className="flex flex-col xs:flex-row items-stretch xs:items-center gap-2 w-full xs:w-auto">
               <Link
                 href="https://github.com/Jatinx3/CineMatch"
                 target="_blank"
@@ -153,8 +153,8 @@ export default function DocumentationPage() {
                   </div>
                   <span className="ml-auto text-xs font-mono text-gray-500">python</span>
                 </div>
-                <div className="p-4 overflow-x-auto text-xs sm:text-sm font-mono leading-loose text-gray-300">
-                  <pre>
+                <div className="p-4 overflow-x-auto text-xs sm:text-sm font-mono leading-loose text-gray-300 w-full">
+                  <pre className="overflow-x-auto">
 <span className="text-gray-500">from</span> <span className="text-blue-400">sklearn.feature_extraction.text</span> <span className="text-gray-500">import</span> <span className="text-[#f43f5e]">TfidfVectorizer</span>
 
 vectorizer = <span className="text-[#f43f5e]">TfidfVectorizer</span>(
@@ -194,8 +194,8 @@ tfidf_matrix = vectorizer.fit_transform(corpus)
                   </div>
                   <span className="ml-auto text-xs font-mono text-gray-500">python</span>
                 </div>
-                <div className="p-4 overflow-x-auto text-xs sm:text-sm font-mono leading-loose text-gray-300">
-                  <pre>
+                <div className="p-4 overflow-x-auto text-xs sm:text-sm font-mono leading-loose text-gray-300 w-full">
+                  <pre className="overflow-x-auto">
 <span className="text-gray-500">from</span> <span className="text-blue-400">sentence_transformers</span> <span className="text-gray-500">import</span> <span className="text-[#c084fc]">SentenceTransformer</span>
 
 model = <span className="text-[#c084fc]">SentenceTransformer</span>(
@@ -305,8 +305,8 @@ embeddings = model.encode(
             <span className="text-3xl">📊</span> Live Dataset Metrics
           </h2>
 
-          <div className="w-full h-[400px] bg-[#111111] rounded-2xl border border-white/5 p-8 shadow-2xl group hover:border-white/10 transition-colors flex flex-col">
-            <h3 className="text-sm font-bold text-gray-300 uppercase tracking-widest mb-6 flex items-center justify-between">
+          <div className="w-full h-[400px] bg-[#111111] rounded-2xl border border-white/5 p-4 sm:p-8 shadow-2xl group hover:border-white/10 transition-colors flex flex-col">
+            <h3 className="text-sm font-bold text-gray-300 uppercase tracking-widest mb-6 flex flex-col sm:flex-row gap-2 items-start sm:items-center justify-between">
               Structural Genre Pipeline Distribution
               <div className="flex gap-2 items-center text-xs text-[#f43f5e]">
                 <span className="w-3 h-3 rounded-full bg-[#f43f5e] animate-pulse" /> Live Analysis
@@ -319,10 +319,13 @@ embeddings = model.encode(
                   <CartesianGrid strokeDasharray="3 3" stroke="#222" vertical={false} />
                   <XAxis 
                     dataKey="name" 
-                    tick={{ fill: '#71717a', fontSize: 12, fontWeight: 500 }} 
+                    tick={{ fill: '#71717a', fontSize: 10, fontWeight: 500 }} 
                     axisLine={false} 
                     tickLine={false} 
                     dy={12}
+                    angle={-45}
+                    textAnchor="end"
+                    height={60}
                   />
                   <YAxis 
                     tick={{ fill: '#71717a', fontSize: 12, fontWeight: 500 }} 
