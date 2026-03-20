@@ -44,7 +44,7 @@ export default function DocumentationPage() {
   }));
 
   return (
-    <div className="min-h-screen bg-[#0a0a0a] text-white selection:bg-[#f43f5e]/30 font-sans pb-24">
+    <div className="min-h-screen bg-[#0a0a0a] text-white selection:bg-[#f43f5e]/30 font-sans pb-24 overflow-x-hidden">
       <div className="max-w-6xl mx-auto px-6 py-12 md:py-20 space-y-20">
         
         {/* ── Header ── */}
@@ -305,7 +305,7 @@ embeddings = model.encode(
             <span className="text-3xl">📊</span> Live Dataset Metrics
           </h2>
 
-          <div className="w-full h-[400px] bg-[#111111] rounded-2xl border border-white/5 p-4 sm:p-8 shadow-2xl group hover:border-white/10 transition-colors flex flex-col">
+          <div className="w-full h-[400px] bg-[#111111] rounded-2xl border border-white/5 p-4 sm:p-8 shadow-2xl group hover:border-white/10 transition-colors flex flex-col min-w-0">
             <h3 className="text-sm font-bold text-gray-300 uppercase tracking-widest mb-6 flex flex-col sm:flex-row gap-2 items-start sm:items-center justify-between">
               Structural Genre Pipeline Distribution
               <div className="flex gap-2 items-center text-xs text-[#f43f5e]">
