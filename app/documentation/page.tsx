@@ -128,7 +128,7 @@ export default function DocumentationPage() {
           <div className="grid lg:grid-cols-2 gap-6">
             
             {/* 01 TF-IDF Engine */}
-            <div className="bg-[#111111] border border-white/5 rounded-2xl p-6 md:p-8 flex flex-col justify-between group hover:border-white/10 transition-colors">
+            <div className="bg-[#111111] border border-white/5 rounded-2xl p-6 md:p-8 flex flex-col justify-between group hover:border-white/10 transition-colors min-w-0">
               <div className="space-y-6">
                 <h3 className="text-xl font-bold text-white flex items-center gap-3">
                   <span className="text-[#f43f5e] font-mono text-sm tracking-widest">01</span> TF-IDF Engine
@@ -144,7 +144,7 @@ export default function DocumentationPage() {
               </div>
 
               {/* Code Snippet */}
-              <div className="mt-8 bg-black rounded-xl border border-white/10 overflow-hidden shadow-2xl">
+              <div className="mt-8 bg-black rounded-xl border border-white/10 overflow-hidden shadow-2xl w-full min-w-0">
                 <div className="flex items-center gap-2 px-4 py-3 border-b border-white/10 bg-[#0a0a0a]">
                   <div className="flex gap-1.5">
                     <div className="w-3 h-3 rounded-full bg-red-500" />
@@ -169,7 +169,7 @@ tfidf_matrix = vectorizer.fit_transform(corpus)
             </div>
 
             {/* 02 BERT Neural Net */}
-            <div className="bg-[#111111] border border-white/5 rounded-2xl p-6 md:p-8 flex flex-col justify-between group hover:border-white/10 transition-colors">
+            <div className="bg-[#111111] border border-white/5 rounded-2xl p-6 md:p-8 flex flex-col justify-between group hover:border-white/10 transition-colors min-w-0">
               <div className="space-y-6">
                 <h3 className="text-xl font-bold text-white flex items-center gap-3">
                   <span className="text-[#c084fc] font-mono text-sm tracking-widest">02</span> BERT Neural Net
@@ -185,7 +185,7 @@ tfidf_matrix = vectorizer.fit_transform(corpus)
               </div>
 
               {/* Code Snippet */}
-              <div className="mt-8 bg-black rounded-xl border border-white/10 overflow-hidden shadow-2xl">
+              <div className="mt-8 bg-black rounded-xl border border-white/10 overflow-hidden shadow-2xl w-full min-w-0">
                 <div className="flex items-center gap-2 px-4 py-3 border-b border-white/10 bg-[#0a0a0a]">
                   <div className="flex gap-1.5">
                     <div className="w-3 h-3 rounded-full bg-red-500" />
